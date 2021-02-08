@@ -7,5 +7,5 @@
 </div>
 
 <% if Current.user.twitter_accounts.none? %>
-  <%= link_to "Connect your Twitter Account", 'auth/twitter', method: :post, class: "btn btn-sm btn-info"%>
+  <%= link_to "Connect your Twitter Account", '/auth/twitter', method: :post, class: "btn btn-sm btn-info"%>
 <% end %>
