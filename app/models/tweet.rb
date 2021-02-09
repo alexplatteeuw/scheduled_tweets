@@ -9,4 +9,12 @@ class Tweet < ApplicationRecord
     self.publish_at ||= 24.hours.from_now
   end
 
+  def published?
+    tweet_id?
+  end
+
+  def publish_to_twitter!
+    tweet = twitter_account.client.update(body)
+    update(tweet_id: tweet.id)
+  end
 end
